@@ -1,0 +1,84 @@
+body{
+    background-image: url(../img/fondoLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  
+  
+  
+  }
+  
+  
+.formulario {
+    background: rgba(0, 0, 0, .1);
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    color: white;
+    margin: 100px ;
+
+
+
+}
+ .text-light{
+margin-top: 2px;
+
+} 
+  
+.box-main__input{
+    height: 40px;
+    width: 260px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: inline-block;
+    margin-top: 15px ;
+    margin-bottom: 20px;
+    margin-left: 5px;
+
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    border: solid #253062;
+    border-radius: 5px;
+  
+  
+    background: #e4e4e4;
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+  
+  
+.form-control:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+  
+.form-control::placeholder {
+    color: white;
+}
+  
+.recuperar {
+    background: #222A3F;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0 0 0;
+    font-weight: 700!important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
+  
+.recuperar:hover {
+    color: white;
+    
+}
+
+  
+  

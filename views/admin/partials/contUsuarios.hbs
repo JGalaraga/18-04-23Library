@@ -1,0 +1,118 @@
+<main class="main-container">
+
+    <div class="row">
+
+
+
+
+        <div class="row">
+            <h1 class="text-center">USUARIOS <span class="material-symbols-outlined">group</span></h1>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                    <a class="btn btn-success" href="registrouser">Nuevo Usuario
+                    </a>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Grado</th>
+                        <th scope="col">Grupo</th>
+                        <th>Estado</th>
+                        <th>Estado</th>
+                        <th>Accciones</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr>
+                        <td>admin</td>
+                        <td>1002563084</td>
+                        <td>Pedro Andres</td>
+                        <td>Castro Pastrana</td>
+                        <td>pedro9@gmail.com</td>
+                        <td>11</td>
+                        <td>2</td>
+                        <td><p id="estado"></p></td>
+                        <td>
+
+                
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="customswitch" onclick="chequeo()"  checked="">
+                                    <label class="custom-control-label" for="customswitch"></label>
+                            </div>
+
+                           
+                        </td>
+
+
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="registrouser">Editar</a>
+                        </td>
+                        <td><a href=""  onclick="eliminaruser()"   ><span class="material-symbols-outlined delet">delete</span></a></td>
+                    </tr>
+
+
+                    <tr>
+
+                        <td>profesor</td>
+                        <td>1033520480</td>
+                        <td>Cristian </td>
+                        <td>Payares</td>
+                        <td>cristian22@gmail.com</td>
+                        <td>10</td>
+                        <td>1</td>
+                         <td><p id="estad"></p></td>
+                        <td>
+
+                
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="customswitc" onclick="cheque()"  checked="">
+                                    <label class="custom-control-label" for="customswitch"></label>
+                            </div>
+
+                           
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="registrouser">Editar</a>
+                        </td>
+                        <td><a href=""  onclick="eliminaruser()"   ><span class="material-symbols-outlined delet">delete</span></a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+</main>
+
+</div>

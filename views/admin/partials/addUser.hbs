@@ -1,0 +1,146 @@
+<main class="main-container">
+	<title>GESTION DE USUARIOS</title>
+
+
+
+
+
+
+
+
+	<h1 class="text-center " style="margin-top: 25px;" >GESTION DE USUARIOS <span class="material-symbols-outlined">switch_account</span></h1>
+	<div class="col-md-10 form-book">
+		<form action="" class="formulario" id="formulario">
+
+			<!-- Grupo: Rol -->
+			<div class="formulario__grupo" id="grupo__rol">
+				<label for="rol" class="formulario__label">Rol</label>
+				<div class="formulario__grupo-input">
+					<select class="formulario__input" class="form-select" id="selecrol">
+
+						<option value="1">Estudiante</option>
+						<option value="2">Administrador</option>
+						<option value="3">Profesor</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- Grupo: Documento -->
+			<div class="formulario__grupo" id="grupo__documento">
+				<label for="documento" class="formulario__label">Documento</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="documento" id="documento">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El documento debe ser solo numeros.</p>
+			</div>
+
+			<!-- Grupo: Nombres -->
+			<div class="formulario__grupo" id="grupo__nombres">
+				<label for="nombres" class="formulario__label">Nombres</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombres" id="nombres">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre debe ser solo texto.</p>
+			</div>
+
+
+			<!-- Grupo: Apellidos-->
+			<div class="formulario__grupo" id="grupo__apellidos">
+				<label for="apellidos" class="formulario__label">Apellidos</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="apellidos" id="apellidos">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Los apellidos deben ser solo texto</p>
+			</div>
+
+
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo Electrónico</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y
+					guion
+					bajo.</p>
+			</div>
+
+
+			<!-- Grupo: Contraseña -->
+			<div class="formulario__grupo" id="grupo__password">
+				<label for="password" class="formulario__label">Contraseña</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="password" id="password">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+
+				</div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Contraseña 2 -->
+			<div class="formulario__grupo" id="grupo__password2">
+				<label for="password2" class="formulario__label">Repetir Contraseña</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="password2" id="password2">
+				
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+			</div>
+
+
+			<!-- Grupo: Grado -->
+			<div class="formulario__grupo" id="grupo__grado">
+				<label for="grado" class="formulario__label">Grado</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="grado" id="grado">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El grado debe ser solo numeros.</p>
+			</div>
+
+
+			<!-- Grupo: Grupo -->
+			<div class="formulario__grupo" id="grupo__Grupo">
+				<label for="Grupo" class="formulario__label">Grupo</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="Grupo" id="Grupo">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El grupo debe ser solo numeros.</p>
+			</div>
+
+
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor rellena el formulario
+					correctamente.
+				</p>
+			</div>
+
+			<div class="  formulario__grupo  formulario__grupo-btn-enviar ">
+				<a href="#" type="submit" id="agregar" class="btn btn-dark  formulario__btn">Agregar</a>
+				<a href="#" type="submit" id="actualizar"  class="btn btn-success   formulario__btn" >Actualizar</a>
+			</div>
+		</form>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+</div>

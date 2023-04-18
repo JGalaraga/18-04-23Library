@@ -1,0 +1,136 @@
+<main class="main-container">
+	<title>GESTION DE SANCIONES</title>
+
+
+
+
+
+
+	<h1 class="text-center" style="margin-top: 25px;">GESTION DE SANCIONES <span
+			class="material-symbols-outlined">front_hand</span></h1>
+	<div class="col-md-10 form-book">
+		<form action="" class="formulario" id="formulario">
+
+			<!-- Grupo: Beneficiario -->
+			<div class="formulario__grupo" id="grupo__usuario">
+				<label for="usuario" class="formulario__label">Beneficiario</label>
+				<div  class="formulario__grupo-input">
+
+			
+				<input class="formulario__input"  style="width: 200px;" type="search" placeholder="Buscar" >
+				<button style="margin-bottom: 4px;" class="btn btn-outline-success busan " type="submit" >Buscar</button>
+				</div>
+				<div class="msjerror" id="dibb"></div>
+
+			</div>
+
+
+			<!-- Grupo: Imprimir Benficiario -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input disabled type="text" class="formulario__input" name="ggf" id="dgfg">
+				</div>
+			</div>
+
+			<!-- Grupo: Sancion -->
+			<div class="formulario__grupo" id="grupo__sancion">
+				<label for="sancion" class="formulario__label">Tipo de sancion</label>
+				<div class="formulario__grupo-input">
+					<select class="formulario__input" class="form-select" id="sancion" required>
+
+						<option value="0">Seleccione tipo de sancion</option>
+						<option value="1">Retraso</option>
+						<option value="2">Extraviado</option>
+						<option value="3">Mutilado</option>
+
+					</select>
+				</div>
+				<div class="msjerror" id="dib"></div>
+
+			</div>
+
+			<!-- Grupo: Observacion -->
+			<div class="formulario__grupo" id="grupo__observacion">
+				<label for="observacion" class="formulario__label">Observacion</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="observacion" id="observacion">
+					<i class="formulario__validacion-estado   fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">La observacion debe ser solo texto.</p>
+			</div>
+
+			<!-- Grupo: Asignacion-->
+			<div class="formulario__grupo" id="grupo__asignacion">
+				<label for="asignacion" class="formulario__label">Fecha de asignacion</label>
+				<div class="formulario__grupo-input">
+					<input type="date" class="formulario__input" name="asignacion" id="asignacion" disabled>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+			</div>
+
+				<!-- Grupo: compromiso -->
+			<div class="formulario__grupo" id="grupo__compromiso">
+				<label for="compromiso" class="formulario__label">Fecha de compromiso</label>
+				<div class="formulario__grupo-input">
+					<input type="date" class="formulario__input" name="compromiso" id="compromiso">
+					
+				</div>
+				<p class="formulario__input-error"></p>
+			</div>
+
+
+
+			<!-- Grupo: Cierre -->
+			<div class="formulario__grupo" id="grupo__cierre">
+				<label for="cierre" class="formulario__label">Fecha de cierre</label>
+				<div class="formulario__grupo-input">
+					<input type="date" class="formulario__input" name="cierre" id="cierre">
+				
+				</div>
+				<p class="formulario__input-error"></p>
+			</div>
+
+			<!-- Grupo: Sancion -->
+			<div class="formulario__grupo" id="grupo__estado">
+				<label for="estado" class="formulario__label">Estado</label>
+				<div class="formulario__grupo-input">
+					<select class="formulario__input" class="form-select" id="estado" required>
+
+						<option value="0">Seleccione estado</option>
+						<option value="1">En proceso</option>
+						<option value="2">Finalizada</option>
+						<option value="3">Disciplinario</option>
+
+					</select>
+				</div>
+				<div class="msjerror" id="di"></div>
+
+			</div>
+
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i><b>Error:</b> Por favor rellena el formulario
+					correctamente.
+				</p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<a href="#" type="submit" id="agregar" class="btn btn-dark   formulario__btn">Agregar</a>
+				<a href="#" type="submit" id="actualizar" class="btn btn-success mover  formulario__btn">Actualizar</a>
+			</div>
+		</form>
+
+	</div>
+
+
+
+
+
+
+
+
+
+</main>
+
+</div>
