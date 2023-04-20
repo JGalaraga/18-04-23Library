@@ -207,7 +207,6 @@ body {
   .main-container {
     grid-area: main;
     overflow-y: auto;
-    margin: 10px;
   }
 
   #contdasboard{
