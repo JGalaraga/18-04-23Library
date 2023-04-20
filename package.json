@@ -19,5 +19,13 @@
     "nodemon": "^2.0.20",
     "sweetalert2": "^11.6.10"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGalaraga/18-04-23Library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JGalaraga/18-04-23Library/issues"
+  },
+  "homepage": "https://github.com/JGalaraga/18-04-23Library#readme",
   "description": ""
 }
