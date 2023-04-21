@@ -22,6 +22,20 @@ var FullCalendar = (function (exports) {
     ***************************************************************************** */
     /* global Reflect, Promise */
 
+    // CAMBIO DE BARRA LATERAL
+    // sidebar toggle
+const btnToggle = document.querySelector('#MEN');
+
+function () {
+  console.log('clik')
+  document.getElementById('sidebar').classList.toggle('inactive');
+  console.log(document.getElementById('sidebar'))
+});
+     
+    
+
+      //***************************************** */
+
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
