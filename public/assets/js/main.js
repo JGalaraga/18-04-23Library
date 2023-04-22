@@ -20,17 +20,7 @@ var FullCalendar = (function (exports) {
     OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
     PERFORMANCE OF THIS SOFTWARE.
     ***************************************************************************** */
-    /* global Reflect, Promise */
-
-    // CAMBIO DE BARRA LATERAL
-    // sidebar toggle
-const btnToggle = document.querySelector('#MEN');
-
-function () {
-  console.log('clik')
-  document.getElementById('sidebar').classList.toggle('inactive');
-  console.log(document.getElementById('sidebar'))
-});
+    /* global Reflect, Promise *
      
     
 
