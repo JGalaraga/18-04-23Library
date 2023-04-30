@@ -2,7 +2,28 @@ require('dotenv').config()
 const express = require('express') //incluir un paquete en node
 const hbs =require('hbs')
 const app = express()
+const session = require('express-session');
+const conexion = require('./db/conexion')
+const router = require('./routes/index');
+const { requireAdmin, requireProfe, requireEstudiante } = require('./controllers/login/login');
 const port = process.env.PORT
+
+
+
+
+
+// Configura la sesión
+app.use(session({
+  secret: 'mi-secreto',
+  resave: false,
+  saveUninitialized: true
+}));
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 
 app.use( express.static('public/assets'))
 
@@ -20,12 +41,16 @@ app.listen(port, () =>{
    console.log(`Escuchando el puerto ${port}`)
 })
 
+
+app.use('/', router);
 //Ruta de INDEX (LOGIN)
 app.get('/', (req,res) =>{
     res.render('login', {
         nombre: 'login'
     })
  })
+
+
 
 
  //Ruta de RECUPERAR CONTRASEÑA
@@ -38,7 +63,7 @@ app.get('/', (req,res) =>{
 //RUTAS DEL ADMINISTRADOR
 
  //Ruta de DASHBOARD
- app.get('/dashboard', (req,res) =>{
+ app.get('/dashboard', requireAdmin, (req,res) =>{
     res.render('admin/dashboard', {
         nombre: 'dashboard'
     })
@@ -46,7 +71,7 @@ app.get('/', (req,res) =>{
 
 
 //Ruta de ROLES
- app.get('/roles', (req,res) =>{
+ app.get('/roles', requireAdmin, (req,res) =>{
     res.render('admin/roles', {
         nombre: 'roles'
     })
@@ -54,14 +79,14 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de USUARIOS
- app.get('/usuarios', (req,res) =>{
+ app.get('/usuarios', requireAdmin, (req,res) =>{
     res.render('admin/usuarios', {
         nombre: 'usuarios'
     })
  })
 
  //Ruta de registro de USUARIOS
- app.get('/registroUser', (req,res) =>{
+ app.get('/registroUser', requireAdmin, (req,res) =>{
     res.render('admin/registrouser', {
         nombre: 'registrouser'
     })  
@@ -69,7 +94,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de BENEFICIARIOS
- app.get('/beneficiarios', (req,res) =>{
+ app.get('/beneficiarios', requireAdmin,(req,res) =>{
     res.render('admin/beneficiarios', {
         nombre: 'beneficiarios'
     })
@@ -77,7 +102,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de LIBROS
- app.get('/libros', (req,res) =>{
+ app.get('/libros', requireAdmin, (req,res) =>{
     res.render('admin/libros', {
         nombre: 'libros'
     })
@@ -85,7 +110,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de agregar LIBROS
- app.get('/addBook', (req,res) =>{
+ app.get('/addBook', requireAdmin, (req,res) =>{
     res.render('admin/addBook', {
         nombre: 'addBook'
     })
@@ -93,7 +118,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de PRÉSTAMOS
- app.get('/prestamos', (req,res) =>{
+ app.get('/prestamos', requireAdmin, (req,res) =>{
     res.render('admin/prestamos', {
         nombre: 'prestamos'
     })
@@ -101,7 +126,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de RESERVAS
- app.get('/reservas', (req,res) =>{
+ app.get('/reservas',requireAdmin, (req,res) =>{
     res.render('admin/reservas', {
         nombre: 'reservas'
     })
@@ -109,7 +134,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de agregar RESERVAS
- app.get('/addReserva', (req,res) =>{
+ app.get('/addReserva', requireAdmin, (req,res) =>{
     res.render('admin/addReserva', {
         nombre: 'addReserva'
     })
@@ -118,7 +143,7 @@ app.get('/', (req,res) =>{
 
 
  //Ruta de SANCIONES
- app.get('/sanciones', (req,res) =>{
+ app.get('/sanciones',requireAdmin, (req,res) =>{
     res.render('admin/sanciones', {
         nombre: 'sanciones'
     })
@@ -126,51 +151,51 @@ app.get('/', (req,res) =>{
 
 
   //Ruta de registro de SANCIONES
-  app.get('/registrosancion', (req,res) =>{
+  app.get('/registrosancion', requireAdmin, (req,res) =>{
     res.render('admin/registrosancion', {
         nombre: 'registrosancion'
     })
  })
 
  //RUTAS DE LOS PROFESORES
- app.get('/teacherInicio', (req,res) =>{
+ app.get('/teacherInicio', requireProfe,(req,res) =>{
     res.render('teacher/inicio', {
         nombre: 'inicio'
     })
  })
 
- app.get('/teacherPrestamos', (req,res) =>{
+ app.get('/teacherPrestamos', requireProfe, (req,res) =>{
     res.render('teacher/prestamos', {
         nombre: 'prestamos'
     })
  })
 
- app.get('/teacherReservas', (req,res) =>{
+ app.get('/teacherReservas', requireProfe,(req,res) =>{
     res.render('teacher/reservas', {
         nombre: 'reservas'
     })
  })
 
- app.get('/teachersanciones', (req,res) =>{
+ app.get('/teachersanciones', requireProfe,(req,res) =>{
     res.render('teacher/sanciones', {
         nombre: 'sanciones'
     })
  })
 
  //RUTAS DE LOS ESTUDIANTES
- app.get('/studentInicio', (req,res) =>{
+ app.get('/studentInicio', requireEstudiante, (req,res) =>{
     res.render('student/inicio', {
         nombre: 'inicio'
     })
  })
 
- app.get('/studentPrestamos', (req,res) =>{
+ app.get('/studentPrestamos', requireEstudiante,(req,res) =>{
     res.render('student/prestamos', {
         nombre: 'prestamos'
     })
  })
 
- app.get('/studentSanciones', (req,res) =>{
+ app.get('/studentSanciones', requireEstudiante,(req,res) =>{
     res.render('student/sanciones', {
         nombre: 'sanciones'
     })
@@ -180,5 +205,12 @@ app.get('/', (req,res) =>{
 app.get('*', (req, res) => {
     res.render('404',{
         nombre:'Página no encontrada'
+    })
+})
+
+
+app.get('eror', (req, res) => {
+    res.render('401',{
+       
     })
 })
