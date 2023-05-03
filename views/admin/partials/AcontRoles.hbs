@@ -1,0 +1,232 @@
+
+
+
+<!--CONTENIDO DE LA PAGINA-->
+<div class="content-wrapper" id="contenido">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <div>
+                        <h1>Roles <i class="fa-solid fa-user"></i></h1>
+                        <hr>
+                    </div>
+                    <div class="d-flex col-md-12 mt-3">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#modalcrear"><i class="fa-solid fa-plus"></i> Agregar Rol</button>
+                    </div>
+                    <div>
+                        <form class="d-flex col-md-3 mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar Rol" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <table class="table">
+                <thead class="table">
+                    <tr>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Estado</th>
+                        <th></th>
+                        <th scope="col">Accciones</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td>Administrador</td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="customswitch" role="switch"
+                                    onclick="chequeo()" checked="">
+                                <a>
+                                    <p id="estado"></p>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-success" onclick="">Permisos</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#modalactualizar">Editar</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="eliminaruser()">Borrar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estudiante</td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="customswitc" role="switch"
+                                    onclick="cheque()" checked="">
+                                <a>
+                                    <p id="estad"></p>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-success" onclick="">Permisos</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#modalactualizar">Editar</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="eliminaruser()">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<!-- Modal Crear Rol-->
+<div class="modal fade" id="modalcrear" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Crear Rol</h5>
+
+            </div>
+            <div class="modal-body">
+
+                <form class="row g-3" action="" id="formulario">
+
+                    <!-- Rol: Nombre -->
+                    <div class="col-md-12 formulario__grupo" id="grupo__nombres">
+                        <label for="nombres" class="formulario__label">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" id="nombres" name="nombres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El nombre debe ser solo texto.</p>
+                    </div>
+
+
+
+                    <!-- Rol: Permisos -->
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Dashboard</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Roles</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Usuarios</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Libros</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Prestamos</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Reservas</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Sanciones</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Estado</label>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="agregar" class="btn btn-success formulario__btn"
+                    data-bs-dismiss="modal">Crear</button>
+                <button type="submit" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Editar Rol-->
+<div class="modal fade" id="modalactualizar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Actualizar Rol</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="row g-3" action="" id="formulario">
+
+                    <!-- Rol: Nombre -->
+                    <div class="col-md-12 formulario__grupo" id="grupo__nombres">
+                        <label for="nombres" class="formulario__label">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" id="nombres" name="nombres"
+                                value="Administrador">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El nombre debe ser solo texto.</p>
+                    </div>
+
+                    <!-- Rol: Permisos -->
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Dashboard</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Roles</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Usuarios</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Libros</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Prestamos</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Reservas</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Sanciones</label>
+                    </div>
+                    <div class="form-check form-switch col-md-4">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Estado</label>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="actualizar" class="btn btn-success formulario__btn"
+                    data-bs-dismiss="modal">Actualizar</button>
+                <button type="submit" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AQUI SCRIPT -->
+<script src="./js/validarRol.js"></script>

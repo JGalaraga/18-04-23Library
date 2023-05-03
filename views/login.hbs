@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LibrarySoft</title>
+    <link rel="stylesheet" type="text/css" href="/css/estiloLogin.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./img/ien.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <span class="big-circle"></span>
+        <img src="img/shape.png" class="square" alt="" />
+        <div class="form">
+            <div class="contact-info">
+
+
+                <div class="info">
+                    <img src="img/hori.png" alt="185px" width="250px">
+                </div>
+
+                <div class="social-media">
+                    <p>Redes sociales :</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ienuevohorizonte.medellin">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+
+                <form action="/" method="post">
+
+                    <h1 class="title">INICIAR SESIÓN</h1>
+
+                    <div class="con">
+                        <div class="input-container">
+                            <input type="number" id="documento" class="input" name="documento" placeholder="Ingrese su documento " />
+
+                        </div>
+                        <div class="input-container">
+                            <input type="password" class="input" id="password" name="password" placeholder="Ingrese su contraseña" />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-check contra ">
+                        <input class="form-check-input  ojito" type="checkbox" value="" id="ojoo">
+                        <label class="form-check-label" for="flexCheckDefault">Mostrar contraseña</label>
+                    </div>
+
+                    <div class="form-group mx-sm-4 olvide">
+                        <span class=""><a href="recuperar" class="olcontra">Has olvidado tú contraseña?</a></span>
+                    </div>
+
+                    {{!-- <a href="#" id="ingresar" class="btn ingresar">INGRESAR</a> --}}
+                    <button type="submit" class="btn ingresar">INGRESAR</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/validarLogin.js"></script>
+</body>
+
+</html>
